@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro"><head>
+<meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' images.unsplash.com data:; connect-src 'self';"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meridian Group — Construcții de Excepție</title>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#08090c;--surface:#0e1016;--accent:#c8922a;--accent2:#e8b84b;--text:#ddd8ce;--muted:rgba(221,216,206,0.45);--border:rgba(200,146,42,0.15)}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 20% 20%,rgba(200,146,42,0.04),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(200,146,42,0.03),transparent 50%)}
+.lang-switcher{display:flex;align-items:center;gap:3px;background:rgba(200,146,42,0.1);border:1px solid rgba(200,146,42,0.25);border-radius:30px;padding:3px;flex-shrink:0}
+.lang-btn{padding:5px 12px;border-radius:24px;font-size:10px;font-weight:700;letter-spacing:1px;cursor:pointer;border:none;background:transparent;color:rgba(200,146,42,0.6);transition:all .25s;text-transform:uppercase;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:var(--bg)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:22px 72px;border-bottom:1px solid transparent;transition:all .5s}
+nav.sc{background:rgba(8,9,12,.97);backdrop-filter:blur(40px);border-color:var(--border)}
+.nav-logo{font-family:'Syncopate',sans-serif;font-size:14px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--accent)}
+.nav-logo span{display:block;font-size:9px;letter-spacing:5px;color:var(--muted);font-weight:400}
+.nav-right{display:flex;align-items:center;gap:24px}
+nav ul{list-style:none;display:flex;gap:40px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;transition:color .3s}
+nav a:hover{color:var(--accent2)}
+.nav-contact{border:1px solid var(--accent)!important;color:var(--accent)!important;padding:10px 28px;letter-spacing:2px!important}
+.nav-contact:hover{background:var(--accent)!important;color:var(--bg)!important}
+.hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,9,12,.97) 35%,rgba(8,9,12,.4) 70%,rgba(8,9,12,.1) 100%),url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?auto=format&fit=crop&w=1920&q=80') right/cover no-repeat;animation:zBg 18s ease-in-out infinite alternate}
+@keyframes zBg{from{transform:scale(1)}to{transform:scale(1.04)}}
+.corner{position:absolute;width:50px;height:50px;z-index:10}
+.corner-tl{top:80px;left:40px;border-top:1px solid var(--accent);border-left:1px solid var(--accent)}
+.corner-tr{top:80px;right:40px;border-top:1px solid var(--accent);border-right:1px solid var(--accent)}
+.corner-bl{bottom:40px;left:40px;border-bottom:1px solid var(--accent);border-left:1px solid var(--accent)}
+.corner-br{bottom:40px;right:40px;border-bottom:1px solid var(--accent);border-right:1px solid var(--accent)}
+.hero-content{position:relative;z-index:10;padding:0 72px 100px;max-width:750px}
+.hero-line{display:flex;align-items:center;gap:16px;margin-bottom:32px;animation:fUp 1s .2s ease both}
+.hero-line-bar{width:40px;height:1px;background:var(--accent)}
+.hero-line-text{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent)}
+h1{font-family:'Syncopate',sans-serif;font-size:clamp(42px,6vw,86px);font-weight:700;line-height:1.05;letter-spacing:2px;text-transform:uppercase;margin-bottom:32px;animation:fUp 1s .4s ease both}
+h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:15px;font-weight:200;letter-spacing:1px;line-height:2;color:var(--muted);max-width:500px;margin-bottom:56px;animation:fUp 1s .6s ease both}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fUp 1s .8s ease both}
+.btn-gold{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--bg);padding:18px 48px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .4s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 24px 48px rgba(200,146,42,.25)}
+.btn-outline-gold{border:1px solid rgba(200,146,42,.4);color:var(--accent);padding:18px 48px;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.btn-outline-gold:hover{border-color:var(--accent);background:rgba(200,146,42,.06)}
+@keyframes fUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-metrics{position:absolute;right:72px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:32px;z-index:10;animation:fUp 1s 1s ease both}
+.h-metric{text-align:right;padding:20px 24px;border-right:1px solid var(--accent);position:relative}
+.h-metric::before{content:'';position:absolute;top:0;right:-1px;width:4px;height:4px;background:var(--accent);transform:translateX(50%)}
+.h-metric-num{font-family:'Syncopate',sans-serif;font-size:32px;color:var(--accent2);line-height:1}
+.h-metric-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.stripe{background:var(--accent);padding:12px 0;overflow:hidden}
+.stripe-inner{display:flex;animation:mq 15s linear infinite;white-space:nowrap}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stripe-item{flex-shrink:0;padding:0 28px;font-family:'Syncopate',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bg);opacity:.8}
+#despre{padding:130px 72px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.about-nums{display:flex;flex-direction:column;gap:2px}
+.about-num-row{background:var(--surface);border:1px solid var(--border);padding:32px 40px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;transition:border-color .3s}
+.about-num-row:hover{border-color:var(--accent)}
+.anr-num{font-family:'Syncopate',sans-serif;font-size:48px;font-weight:700;color:var(--accent);line-height:1}
+.anr-info-title{font-size:15px;font-weight:500;color:var(--text);margin-bottom:4px}
+.anr-info-sub{font-size:13px;color:var(--muted);font-weight:300}
+.about-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.about-h2{font-family:'Syncopate',sans-serif;font-size:clamp(28px,3.5vw,48px);font-weight:700;line-height:1.2;text-transform:uppercase;letter-spacing:1px;margin-bottom:28px}
+.about-h2 em{color:var(--accent);font-style:normal}
+.about-text{font-size:14px;font-weight:300;line-height:2;color:var(--muted);margin-bottom:36px}
+.cert-row{display:flex;gap:12px;flex-wrap:wrap}
+.cert-badge{border:1px solid var(--border);padding:8px 16px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+#servicii{padding:130px 72px;background:var(--surface);border-top:1px solid var(--border)}
+.svc-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:80px}
+.s-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.s-title{font-family:'Syncopate',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:700;text-transform:uppercase;letter-spacing:1px;line-height:1.1}
+.s-desc{font-size:14px;font-weight:300;line-height:1.9;color:var(--muted)}
+.svc-table{display:grid;gap:2px}
+.svc-row{display:grid;grid-template-columns:60px 1fr auto auto;align-items:center;gap:32px;padding:32px 40px;background:var(--bg);border:1px solid var(--border);transition:all .3s;cursor:pointer}
+.svc-row:hover{background:rgba(200,146,42,.04);border-color:rgba(200,146,42,.3)}
+.svc-row:hover .svc-arr{opacity:1;transform:translateX(0)}
+.svc-index{font-family:'Syncopate',sans-serif;font-size:12px;color:rgba(200,146,42,.4);letter-spacing:2px}
+.svc-row-title{font-size:18px;font-weight:500;color:var(--text)}
+.svc-row-cat{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);background:rgba(200,146,42,.08);padding:4px 12px;border:1px solid var(--border)}
+.svc-arr{color:var(--accent);opacity:0;transform:translateX(-10px);transition:all .3s}
+#process{padding:130px 72px;border-top:1px solid var(--border)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:80px}
+.proc-step{background:var(--bg);padding:48px 40px}
+.proc-num{font-family:'Syncopate',sans-serif;font-size:72px;font-weight:700;color:rgba(200,146,42,.07);line-height:1;margin-bottom:24px}
+.proc-title{font-size:16px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.proc-desc{font-size:13px;font-weight:300;line-height:1.8;color:var(--muted)}
+#contact{padding:130px 72px;background:var(--surface);border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,42,.06),transparent 70%);pointer-events:none}
+.cta-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;position:relative}
+.cta-h2{font-family:'Syncopate',sans-serif;font-size:clamp(40px,6vw,80px);font-weight:700;text-transform:uppercase;letter-spacing:2px;line-height:1.05;margin-bottom:20px;position:relative}
+.cta-h2 em{color:var(--accent);font-style:normal}
+.cta-sub{font-size:16px;font-weight:300;color:var(--muted);max-width:500px;margin:0 auto 56px;line-height:1.8;position:relative}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+footer{border-top:1px solid var(--border);padding:48px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Syncopate',sans-serif;font-size:14px;font-weight:700;letter-spacing:4px;color:var(--accent)}
+.footer-mid{font-size:11px;color:var(--muted);letter-spacing:1px;text-align:center;line-height:1.8}
+.footer-socials{display:flex;gap:24px}
+.footer-socials a{color:var(--muted);font-size:16px;text-decoration:none;transition:color .3s}
+.footer-socials a:hover{color:var(--accent)}
+@media(max-width:900px){nav{padding:16px 24px}nav ul{display:none}.hero-content{padding:0 24px 80px}.hero-metrics{display:none}#despre,#servicii,#process,#contact{padding:80px 24px}#despre{grid-template-columns:1fr}.svc-intro{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;text-align:center;padding:32px 24px}}
+</style></head><body>
+<nav id="nav">
+  <div class="nav-logo">MERIDIAN<span>GROUP · CONSTRUCT</span></div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#despre" data-lang="nav_d">Despre</a></li>
+      <li><a href="#servicii" data-lang="nav_s">Servicii</a></li>
+      <li><a href="#process" data-lang="nav_p">Proces</a></li>
+      <li><a href="#contact" class="nav-contact" data-lang="nav_c">Contact</a></li>
+    </ul><div class="lang-switcher"><button class="lang-btn" data-lang-target="ro">RO</button><button class="lang-btn" data-lang-target="en">EN</button><button class="lang-btn" data-lang-target="ru">RU</button></div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+  <div class="hero-content">
+    <div class="hero-line"><span class="hero-line-bar"></span><span class="hero-line-text" data-lang="hero_line">Meridian Group · Est. 2005</span></div>
+    <h1 data-lang="h1">Construim<br><em>Monumentele</em><br>Tale.</h1>
+    <p class="hero-sub" data-lang="hero_sub">Nu livrăm simplu construcții. Livrăm certitudini.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold" data-lang="btn_consult">Solicită Consultanță</a>
+      <a href="#servicii" class="btn-outline-gold" data-lang="btn_port">Portofoliu</a>
+    </div>
+  </div>
+  <div class="hero-metrics">
+    <div class="h-metric"><div class="h-metric-num">20+</div><div class="h-metric-label" data-lang="m1">Ani Experiență</div></div>
+    <div class="h-metric"><div class="h-metric-num">1200</div><div class="h-metric-label" data-lang="m2">Proiecte Livrate</div></div>
+    <div class="h-metric"><div class="h-metric-num">ISO</div><div class="h-metric-label" data-lang="m3">9001 Certificat</div></div>
+  </div>
+</section>
+<div class="stripe"><div class="stripe-inner">
+  <span class="stripe-item" data-lang="s_stripe">CONSTRUCȚII REZIDENȚIALE · CLĂDIRI COMERCIALE · HALE INDUSTRIALE · RENOVĂRI COMPLEXE · MANAGEMENT DE PROIECT · </span>
+  <span class="stripe-item" data-lang="s_stripe">CONSTRUCȚII REZIDENȚIALE · CLĂDIRI COMERCIALE · HALE INDUSTRIALE · RENOVĂRI COMPLEXE · MANAGEMENT DE PROIECT · </span>
+</div></div>
+<section id="despre">
+  <div class="about-nums">
+    <div class="about-num-row"><div class="anr-num" data-lang="an1_v">20+</div><div><div class="anr-info-title" data-lang="an1_l">Ani de Activitate</div><div class="anr-info-sub" data-lang="an1_s">Din 2005, construim cu responsabilitate</div></div></div>
+    <div class="about-num-row"><div class="anr-num" data-lang="an2_v">1.2k</div><div><div class="anr-info-title" data-lang="an2_l">Proiecte Finalizate</div><div class="anr-info-sub" data-lang="an2_s">Rezidențial, comercial, industrial</div></div></div>
+    <div class="about-num-row"><div class="anr-num" data-lang="an3_v">98%</div><div><div class="anr-info-title" data-lang="an3_l">Satisfacție Clienți</div><div class="anr-info-sub" data-lang="an3_s">Pe baza sondajelor post-proiect</div></div></div>
+    <div class="about-num-row"><div class="anr-num" data-lang="an4_v">5★</div><div><div class="anr-info-title" data-lang="an4_l">Rating Mediu Google</div><div class="anr-info-sub" data-lang="an4_s">320+ recenzii verificate</div></div></div>
+  </div>
+  <div>
+    <p class="about-eyebrow" data-lang="about_eye">Cine suntem</p>
+    <h2 class="about-h2" data-lang="about_h2">Excelența nu<br>este o opțiune.<br>E <em>standard.</em></h2>
+    <p class="about-text" data-lang="about_text">Meridian Group este una dintre cele mai respectate companii de construcții din România, cu o echipă de 80+ specialiști certificați.</p>
+    <div class="cert-row"><span class="cert-badge">ISO 9001</span><span class="cert-badge">ISO 14001</span><span class="cert-badge">ANRE</span><span class="cert-badge">SRAC</span></div>
+  </div>
+</section>
+<section id="servicii">
+  <div class="svc-intro">
+    <div><p class="s-eyebrow" data-lang="svc_eye">Servicii</p><h2 class="s-title" data-lang="svc_h2">CE PUTEM<br>CONSTRUI<br>PENTRU TINE</h2></div>
+    <p class="s-desc" data-lang="svc_desc">De la un simplu apartament renovat până la un parc logistic — aceeași rigoare în fiecare proiect.</p>
+  </div>
+  <div class="svc-table">
+    <div class="svc-row"><span class="svc-index">01</span><span class="svc-row-title" data-lang="sv1">Construcții Rezidențiale Noi</span><span class="svc-row-cat" data-lang="sc1">Rezidențial</span><i class="fas fa-arrow-right svc-arr"></i></div>
+    <div class="svc-row"><span class="svc-index">02</span><span class="svc-row-title" data-lang="sv2">Clădiri Comerciale & Office</span><span class="svc-row-cat" data-lang="sc2">Comercial</span><i class="fas fa-arrow-right svc-arr"></i></div>
+    <div class="svc-row"><span class="svc-index">03</span><span class="svc-row-title" data-lang="sv3">Hale Industriale & Depozite</span><span class="svc-row-cat" data-lang="sc3">Industrial</span><i class="fas fa-arrow-right svc-arr"></i></div>
+    <div class="svc-row"><span class="svc-index">04</span><span class="svc-row-title" data-lang="sv4">Renovări & Consolidări Complexe</span><span class="svc-row-cat" data-lang="sc4">Renovări</span><i class="fas fa-arrow-right svc-arr"></i></div>
+    <div class="svc-row"><span class="svc-index">05</span><span class="svc-row-title" data-lang="sv5">Management de Proiect (PM)</span><span class="svc-row-cat" data-lang="sc5">Consultanță</span><i class="fas fa-arrow-right svc-arr"></i></div>
+  </div>
+</section>
+<section id="process">
+  <p class="s-eyebrow" data-lang="proc_eye">Procesul nostru</p>
+  <h2 class="s-title" data-lang="proc_h2">Cum lucrăm</h2>
+  <div class="proc-grid">
+    <div class="proc-step"><div class="proc-num">01</div><h3 class="proc-title" data-lang="p1t">Consultanță & Vizită</h3><p class="proc-desc" data-lang="p1d">Întâlnire la fața locului, analiza cerințelor, identificarea soluțiilor optime.</p></div>
+    <div class="proc-step"><div class="proc-num">02</div><h3 class="proc-title" data-lang="p2t">Proiect & Deviz</h3><p class="proc-desc" data-lang="p2d">Proiect tehnic complet, deviz detaliat cu prețuri ferme, grafic de execuție.</p></div>
+    <div class="proc-step"><div class="proc-num">03</div><h3 class="proc-title" data-lang="p3t">Execuție Controlată</h3><p class="proc-desc" data-lang="p3d">Echipă proprie 100%. Rapoarte săptămânale. Acces la platforma de urmărire.</p></div>
+    <div class="proc-step"><div class="proc-num">04</div><h3 class="proc-title" data-lang="p4t">Recepție & Garanție</h3><p class="proc-desc" data-lang="p4d">Proces de recepție riguros, documentație completă, garanție contractuală 5 ani.</p></div>
+  </div>
+</section>
+<section id="contact">
+  <p class="cta-eyebrow" data-lang="cta_eye">Hai să construim</p>
+  <h2 class="cta-h2" data-lang="cta_h2">PROIECTUL TĂU<br>ÎNCEPE <em>AZI.</em></h2>
+  <p class="cta-sub" data-lang="cta_sub">Consultanță gratuită, deviz în 48h, echipă proprie.</p>
+  <div class="cta-row">
+    <a href="tel:+40745000001" class="btn-gold"><i class="fas fa-phone" style="margin-right:10px"></i><span data-lang="btn_phone">0745 000 001</span></a>
+    email@adresata.ro
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">MERIDIAN GROUP</div>
+  <div class="footer-mid" data-lang="footer_mid">Adresa ta poate fi aici · ISO 9001<br>© 2026 Meridian Group SRL</div>
+  <div class="footer-socials"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',window.scrollY>60));
+const T={'ro': {'nav_d': 'Despre', 'nav_s': 'Servicii', 'nav_p': 'Proces', 'nav_c': 'Contact', 'hero_line': 'Meridian Group · Est. 2005', 'h1': 'Construim<br><em>Monumentele</em><br>Tale.', 'hero_sub': 'Nu livrăm simplu construcții. Livrăm certitudini. Fiecare proiect este o angajare totală față de excelență, durabilitate și respectul pentru investiția clientului.', 'btn_consult': 'Solicită Consultanță', 'btn_port': 'Portofoliu', 'm1': 'Ani Experiență', 'm2': 'Proiecte Livrate', 'm3': 'ISO Certificat', 's_stripe': 'CONSTRUCȚII REZIDENȚIALE · CLĂDIRI COMERCIALE · HALE INDUSTRIALE · RENOVĂRI COMPLEXE · MANAGEMENT DE PROIECT · ', 'an1_v': '20+', 'an1_l': 'Ani de Activitate', 'an1_s': 'Din 2005, construim cu responsabilitate', 'an2_v': '1.2k', 'an2_l': 'Proiecte Finalizate', 'an2_s': 'Rezidențial, comercial, industrial', 'an3_v': '98%', 'an3_l': 'Satisfacție Clienți', 'an3_s': 'Pe baza sondajelor post-proiect', 'an4_v': '5★', 'an4_l': 'Rating Mediu Google', 'an4_s': '320+ recenzii verificate', 'about_eye': 'Cine suntem', 'about_h2': 'Excelența nu<br>este o opțiune.<br>E <em>standard.</em>', 'about_text': 'Meridian Group este una dintre cele mai respectate companii de construcții din România, cu o echipă de 80+ specialiști certificați și infrastructură capabilă să gestioneze proiecte de orice dimensiune.', 'svc_eye': 'Servicii', 'svc_h2': 'CE PUTEM<br>CONSTRUI<br>PENTRU TINE', 'svc_desc': 'De la un simplu apartament renovat până la un parc logistic — abordăm fiecare proiect cu aceeași rigoare.', 'sv1': 'Construcții Rezidențiale Noi', 'sc1': 'Rezidențial', 'sv2': 'Clădiri Comerciale & Office', 'sc2': 'Comercial', 'sv3': 'Hale Industriale & Depozite', 'sc3': 'Industrial', 'sv4': 'Renovări & Consolidări Complexe', 'sc4': 'Renovări', 'sv5': 'Management de Proiect (PM)', 'sc5': 'Consultanță', 'proc_eye': 'Procesul nostru', 'proc_h2': 'Cum lucrăm', 'p1t': 'Consultanță & Vizită', 'p1d': 'Întâlnire la fața locului, analiza cerințelor, identificarea soluțiilor optime.', 'p2t': 'Proiect & Deviz', 'p2d': 'Proiect tehnic complet, deviz detaliat cu prețuri ferme, grafic de execuție.', 'p3t': 'Execuție Controlată', 'p3d': 'Echipă proprie 100%. Rapoarte săptămânale. Acces la platforma de urmărire.', 'p4t': 'Recepție & Garanție', 'p4d': 'Proces de recepție riguros, documentație completă, garanție contractuală 5 ani.', 'cta_eye': 'Hai să construim', 'cta_h2': 'PROIECTUL TĂU<br>ÎNCEPE <em>AZI.</em>', 'cta_sub': 'Consultanță gratuită, deviz în 48h, echipă proprie. Nicio surpriză, niciun subantreprenor necalificat.', 'btn_phone': '0745 000 001', 'btn_email': 'Trimite Email', 'footer_mid': 'Adresa ta poate fi aici · ISO 9001 · Licențiați ANRE<br>© 2026 Meridian Group SRL'}, 'en': {'nav_d': 'About', 'nav_s': 'Services', 'nav_p': 'Process', 'nav_c': 'Contact', 'hero_line': 'Meridian Group · Est. 2005', 'h1': 'We Build<br><em>Your</em><br>Monuments.', 'hero_sub': "We don't simply deliver construction. We deliver certainties. Every project is a total commitment to excellence, durability and respect for the client's investment.", 'btn_consult': 'Request Consultation', 'btn_port': 'Portfolio', 'm1': 'Years Experience', 'm2': 'Projects Delivered', 'm3': 'ISO Certified', 's_stripe': 'RESIDENTIAL CONSTRUCTION · COMMERCIAL BUILDINGS · INDUSTRIAL HALLS · COMPLEX RENOVATIONS · PROJECT MANAGEMENT · ', 'an1_v': '20+', 'an1_l': 'Years of Activity', 'an1_s': 'Building responsibly since 2005', 'an2_v': '1.2k', 'an2_l': 'Completed Projects', 'an2_s': 'Residential, commercial, industrial', 'an3_v': '98%', 'an3_l': 'Client Satisfaction', 'an3_s': 'Based on post-project surveys', 'an4_v': '5★', 'an4_l': 'Average Google Rating', 'an4_s': '320+ verified reviews', 'about_eye': 'Who we are', 'about_h2': "Excellence is not<br>an option.<br>It's <em>standard.</em>", 'about_text': "Meridian Group is one of Romania's most respected construction companies, with a team of 80+ certified specialists capable of handling projects of any size.", 'svc_eye': 'Services', 'svc_h2': 'WHAT WE CAN<br>BUILD<br>FOR YOU', 'svc_desc': 'From a simple apartment renovation to a logistics park — we approach every project with the same rigour.', 'sv1': 'New Residential Construction', 'sc1': 'Residential', 'sv2': 'Commercial & Office Buildings', 'sc2': 'Commercial', 'sv3': 'Industrial Halls & Warehouses', 'sc3': 'Industrial', 'sv4': 'Complex Renovations & Consolidations', 'sc4': 'Renovation', 'sv5': 'Project Management (PM)', 'sc5': 'Consulting', 'proc_eye': 'Our process', 'proc_h2': 'How we work', 'p1t': 'Consultation & Site Visit', 'p1d': 'On-site meeting, requirements analysis, identifying optimal solutions.', 'p2t': 'Design & Estimate', 'p2d': 'Full technical design, detailed fixed-price estimate, execution schedule.', 'p3t': 'Controlled Execution', 'p3d': '100% own team. Weekly progress reports. Real-time tracking platform access.', 'p4t': 'Handover & Warranty', 'p4d': 'Rigorous handover process, complete documentation, 5-year contractual warranty.', 'cta_eye': "Let's build", 'cta_h2': 'YOUR PROJECT<br>STARTS <em>TODAY.</em>', 'cta_sub': 'Free consultation, estimate in 48h, own team. No surprises, no unqualified subcontractors.', 'btn_phone': '0745 000 001', 'btn_email': 'Send Email', 'footer_mid': 'Your address can be here · ISO 9001 · ANRE Licensed<br>© 2026 Meridian Group SRL'}, 'ru': {'nav_d': 'О нас', 'nav_s': 'Услуги', 'nav_p': 'Процесс', 'nav_c': 'Контакт', 'hero_line': 'Meridian Group · Осн. 2005', 'h1': 'Мы строим<br><em>Ваши</em><br>памятники.', 'hero_sub': 'Мы не просто строим. Мы даём гарантии. Каждый проект — это абсолютная приверженность качеству, долговечности и уважению к инвестиции клиента.', 'btn_consult': 'Запросить консультацию', 'btn_port': 'Портфолио', 'm1': 'Лет опыта', 'm2': 'Сданных проектов', 'm3': 'ISO сертификат', 's_stripe': 'ЖИЛОЕ СТРОИТЕЛЬСТВО · КОММЕРЧЕСКИЕ ЗДАНИЯ · ПРОМЫШЛЕННЫЕ ЦЕХА · РЕМОНТ · УПРАВЛЕНИЕ ПРОЕКТАМИ · ', 'an1_v': '20+', 'an1_l': 'Лет деятельности', 'an1_s': 'Строим ответственно с 2005', 'an2_v': '1.2k', 'an2_l': 'Завершённых проектов', 'an2_s': 'Жилое, коммерческое, промышленное', 'an3_v': '98%', 'an3_l': 'Удовлетворённость клиентов', 'an3_s': 'По данным опросов после проекта', 'an4_v': '5★', 'an4_l': 'Средний рейтинг Google', 'an4_s': '320+ подтверждённых отзывов', 'about_eye': 'Кто мы', 'about_h2': 'Совершенство — это<br>не опция.<br>Это <em>стандарт.</em>', 'about_text': 'Meridian Group — одна из самых уважаемых строительных компаний Румынии, с командой 80+ сертифицированных специалистов.', 'svc_eye': 'Услуги', 'svc_h2': 'ЧТО МЫ МОЖЕМ<br>ПОСТРОИТЬ<br>ДЛЯ ВАС', 'svc_desc': 'От простого ремонта квартиры до логистического парка — одинаковая строгость в каждом проекте.', 'sv1': 'Новое жилое строительство', 'sc1': 'Жилое', 'sv2': 'Коммерческие и офисные здания', 'sc2': 'Коммерческое', 'sv3': 'Промышленные цеха и склады', 'sc3': 'Промышленное', 'sv4': 'Капитальный ремонт и укрепление', 'sc4': 'Ремонт', 'sv5': 'Управление проектами (PM)', 'sc5': 'Консалтинг', 'proc_eye': 'Наш процесс', 'proc_h2': 'Как мы работаем', 'p1t': 'Консультация и выезд', 'p1d': 'Выезд на объект, анализ требований, определение оптимальных решений.', 'p2t': 'Проект и смета', 'p2d': 'Полный технический проект, детальная смета с фиксированными ценами, график.', 'p3t': 'Контролируемое выполнение', 'p3d': '100% собственная команда. Еженедельные отчёты. Доступ к платформе отслеживания.', 'p4t': 'Приёмка и гарантия', 'p4d': 'Тщательный процесс приёмки, полная документация, контрактная гарантия 5 лет.', 'cta_eye': 'Давайте построим', 'cta_h2': 'ВАШ ПРОЕКТ<br>НАЧИНАЕТСЯ <em>СЕГОДНЯ.</em>', 'cta_sub': 'Бесплатная консультация, смета за 48ч, собственная команда. Без сюрпризов и неквалифицированных субподрядчиков.', 'btn_phone': '0745 000 001', 'btn_email': 'Написать Email', 'footer_mid': 'Ваш адрес может быть здесь · ISO 9001 · Лицензия ANRE<br>© 2026 Meridian Group SRL'}};
+function setLang(T,l){document.querySelectorAll('[data-lang]').forEach(el=>{const v=T[l]&&T[l][el.getAttribute('data-lang')];if(v!==undefined){const s=String(v).replace(/<script[\s\S]*?<\/script>/gi,'');if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=v;else el.innerHTML=s;}});document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.langTarget===l));document.documentElement.lang=l;localStorage.setItem('lang',l);}
+document.querySelectorAll('.lang-btn'
